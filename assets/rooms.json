@@ -1,0 +1,18 @@
+{
+  "rooms": {
+    "start": {
+      "id": "start",
+      "description": "You are in a dusty stone chamber with exits in all directions.",
+      "exits": {
+        "north": "hallway"
+      }
+    },
+    "hallway": {
+      "id": "hallway",
+      "description": "A dark, narrow hallway stretches before you.",
+      "exits": {
+        "south": "start"
+      }
+    }
+  }
+}

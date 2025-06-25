@@ -1,0 +1,27 @@
+*📦 Project Init
+*Create new Rust project: cargo new mud_engine
+
+*cd mud_engine
+
+*🗂 Folder Structure
+*Create module folders: src/server, src/game, src/world, src/utils
+
+*Create lib.rs for shared module declarations
+
+*📄 Create Core Files
+*src/main.rs – Entry point
+
+*src/lib.rs – Expose modules
+
+ src/server/mod.rs, telnet.rs, player_connection.rs
+
+ src/game/mod.rs, player.rs, command.rs, parser.rs, state.rs
+
+ src/world/mod.rs, room.rs, item.rs, world_loader.rs
+
+ src/utils/mod.rs, config.rs
+
+🔧 Setup Module Imports
+ Add pub mod declarations in lib.rs
+
+ Add mod declarations in each mod.rs to wire submodules
