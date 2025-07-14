@@ -1,6 +1,5 @@
 use crate::game::state::GameContext;
 use crate::game::command::Command;
-use crate::game::equipment::{Equipment, EquipmentSlot};
 
 pub struct EquipCommand;
 

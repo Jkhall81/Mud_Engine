@@ -2,7 +2,7 @@ use std::collections::HashMap;
 use std::sync::Arc;
 
 use crate::game::command::Command;
-use crate::game::commands::{LookCommand, MovementCommand, SayCommand};
+use crate::game::commands::{LookCommand, MovementCommand, SayCommand, InventoryCommand};
 use crate::game::state::GameContext;
 
 pub struct CommandProcessor {
@@ -16,6 +16,10 @@ impl Default for CommandProcessor {
         let look = Arc::new(LookCommand);
         commands.insert("look".into(), look.clone());
         commands.insert("l".into(), look);
+
+        let inventory = Arc::new(InventoryCommand);
+        commands.insert("inventory".into(), inventory.clone());
+        commands.insert("i".into(), inventory);
 
         commands.insert("say".into(), Arc::new(SayCommand));
 

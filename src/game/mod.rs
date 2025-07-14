@@ -4,3 +4,4 @@ pub mod command;
 pub mod commands;
 pub mod player;
 pub mod equipment;
+pub mod character_templates;

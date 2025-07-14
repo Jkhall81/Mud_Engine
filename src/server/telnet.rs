@@ -5,6 +5,7 @@ use std::collections::HashMap;
 use crate::game::player::Player;
 
 use crate::game::{parser::CommandProcessor, state::GameContext};
+use crate::game::character_templates::{get_race_mods, get_class_mods, StatBlock};
 
 
 pub async fn start_telnet_server() -> Result<(), Box<dyn Error>> {
@@ -40,6 +41,7 @@ async fn handle_client(socket: tokio::net::TcpStream) -> Result<(), Box<dyn Erro
     let name = prompt(&mut writer, &mut lines, "Enter your name: ").await?;
     let path = format!("assets/players/{}.json", name.to_lowercase());
 
+    
     let player = if std::path::Path::new(&path).exists() {
         writer.write_all(b"Welcome back!\r\n").await?;
         Player::load_from_file(&name)?
@@ -49,6 +51,20 @@ async fn handle_client(socket: tokio::net::TcpStream) -> Result<(), Box<dyn Erro
         let race = prompt(&mut writer, &mut lines, "Choose a race (human, elf, dwarf): ").await?;
         let class = prompt(&mut writer, &mut lines, "Choose a class (fighter, mage, rogue): ").await?;
 
+        let race_stats = get_race_mods().get(race.as_str()).cloned().unwrap_or_default();
+        let class_stats = get_class_mods().get(class.as_str()).cloned().unwrap_or_default();
+
+        let total_stats = StatBlock {
+            hp: race_stats.hp + class_stats.hp,
+            mana: race_stats.mana + class_stats.mana,
+            strength: race_stats.strength + class_stats.strength,
+            dexterity: race_stats.dexterity + class_stats.dexterity,
+            constitution: race_stats.constitution + class_stats.constitution,
+            intelligence: race_stats.intelligence + class_stats.intelligence,
+            wisdom: race_stats.wisdom + class_stats.wisdom,
+            attacks_per_round: class_stats.attacks_per_round,
+        };
+
         let new_player = Player {
             name: name.clone(),
             race,
@@ -56,6 +72,23 @@ async fn handle_client(socket: tokio::net::TcpStream) -> Result<(), Box<dyn Erro
             location: "start".to_string(),
             inventory: vec![],
             equipped: HashMap::new(),
+
+            // Base Stats
+            hp: total_stats.hp,
+            mana: total_stats.mana,
+            strength: total_stats.strength,
+            dexterity: total_stats.dexterity,
+            constitution: total_stats.constitution,
+            intelligence: total_stats.intelligence,
+            wisdom: total_stats.wisdom,
+
+            // Initial Values
+            level: 1,
+            experience: 0,
+            max_hp: total_stats.hp,
+            max_mana: total_stats.mana,
+            gold: 100,
+            attacks_per_round: total_stats.attacks_per_round,
         };
 
         new_player.save_to_file()?; // Save immediately
