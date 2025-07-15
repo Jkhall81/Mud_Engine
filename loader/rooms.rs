@@ -44,3 +44,30 @@ pub async fn load_rooms_from_dir(pool: &PgPool, dir: &str) -> Result<(), Box<dyn
 
     Ok(())
 }
+
+
+pub async fn validate_room_links(pool: &PgPool) -> Result<(), Box<dyn std::error::Error>> {
+    let missing = sqlx::query!(
+        r#"
+        SELECT from_room, direction, to_room
+        FROM room_exits
+        WHERE to_room NOT IN (SELECT id FROM rooms)
+        "#
+    )
+    .fetch_all(pool)
+    .await?;
+
+    if missing.is_empty() {
+        println!("All room links are valid.");
+    } else {
+        println!("Missing target rooms:");
+        for row in missing {
+            println!(
+                "  [{}] {} -> {} (MISSING)",
+                row.from_room, row.direction, row.to_room
+            );
+        }
+    }
+
+    Ok(())
+}

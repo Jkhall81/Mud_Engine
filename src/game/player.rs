@@ -1,3 +1,4 @@
+use sqlx::{PgPool, FromRow};
 use crate::game::equipment::{Equipment, EquipmentSlot};
 use std::collections::HashMap;
 
@@ -20,28 +21,85 @@ pub struct Player {
     pub wisdom: i32,
 
     // New Fields
-    pub level: u32,
-    pub experience: u32,
+    pub level: i32,
+    pub experience: i32,
     pub max_hp: i32,
     pub max_mana: i32,
-    pub gold: u32,
-    pub attacks_per_round: u8,
+    pub gold: i32,
+    pub attacks_per_round: i16,
 }
 
-    impl Player {
-        pub fn save_to_file(&self) -> std::io::Result<()> {
-        let dir = std::path::Path::new("assets/players");
-        std::fs::create_dir_all(dir)?; // Make sure the folder exists
+impl Player {
+    pub async fn load_from_db(pool: &PgPool, name: &str) -> Result<Option<Self>, sqlx::Error> {
+        let player = sqlx::query_as!(
+            Player,
+            r#"
+            SELECT
+                name, race, class, location,
+                hp, mana, strength, dexterity, constitution,
+                intelligence, wisdom, level, experience,
+                max_hp, max_mana, gold, attacks_per_round
+            FROM players
+            WHERE name = $1
+            "#,
+            name
+        )
+        .fetch_optional(pool)
+        .await?;
 
-        let path = dir.join(format!("{}.json", self.name.to_lowercase()));
-        let json = serde_json::to_string_pretty(self)?;
-        std::fs::write(path, json)
+        // You will still need to load inventory + equipped later if you support it
+        Ok(player)
     }
 
+    pub async fn save_to_db(&self, pool: &PgPool) -> Result<(), sqlx::Error> {
+        sqlx::query!(
+            r#"
+            INSERT INTO players (
+                name, race, class, location,
+                hp, mana, strength, dexterity, constitution,
+                intelligence, wisdom, level, experience,
+                max_hp, max_mana, gold, attacks_per_round
+            )
+            VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17)
+            ON CONFLICT (name) DO UPDATE SET
+                race = EXCLUDED.race,
+                class = EXCLUDED.class,
+                location = EXCLUDED.location,
+                hp = EXCLUDED.hp,
+                mana = EXCLUDED.mana,
+                strength = EXCLUDED.strength,
+                dexterity = EXCLUDED.dexterity,
+                constitution = EXCLUDED.constitution,
+                intelligence = EXCLUDED.intelligence,
+                wisdom = EXCLUDED.wisdom,
+                level = EXCLUDED.level,
+                experience = EXCLUDED.experience,
+                max_hp = EXCLUDED.max_hp,
+                max_mana = EXCLUDED.max_mana,
+                gold = EXCLUDED.gold,
+                attacks_per_round = EXCLUDED.attacks_per_round
+            "#,
+            self.name,
+            self.race,
+            self.class,
+            self.location,
+            self.hp,
+            self.mana,
+            self.strength,
+            self.dexterity,
+            self.constitution,
+            self.intelligence,
+            self.wisdom,
+            self.level as i32,
+            self.experience as i32,
+            self.max_hp,
+            self.max_mana,
+            self.gold as i32,
+            self.attacks_per_round as i32,
+        )
+        .execute(pool)
+        .await?;
 
-    pub fn load_from_file(name: &str) -> std::io::Result<Self> {
-        let path = format!("assets/players/{}.json", name.to_lowercase());
-        let data = std::fs::read_to_string(path)?;
-        Ok(serde_json::from_str(&data)?)
+        Ok(())
     }
 }
