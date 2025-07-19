@@ -74,7 +74,7 @@ async fn handle_client(
             name: name.clone(),
             race,
             class,
-            location: "start".to_string(),
+            location: "3001".to_string(),
             inventory: vec![],
             equipped: HashMap::new(),
 
@@ -91,7 +91,7 @@ async fn handle_client(
             max_hp: total_stats.hp,
             max_mana: total_stats.mana,
             gold: 100,
-            attacks_per_round: total_stats.attacks_per_round,
+            attacks_per_round: total_stats.attacks_per_round as i16,
         };
 
         new_player.save_to_db(&pool).await?;
@@ -100,7 +100,8 @@ async fn handle_client(
     };
 
     // -- Game Context and Command Loop --
-    let mut context = GameContext::with_player(player);
+    let mut context = GameContext::with_player(player, &pool).await;
+
     let processor = CommandProcessor::default();
 
     writer.write_all(b"\r\n> ").await?;

@@ -6,7 +6,7 @@ use dotenvy::dotenv;
 async fn main() {
     dotenv().ok(); // Loads .env file into env vars
 
-    let pool = match db::establish_db_pool().await {
+    let pool = match db::db::establish_db_pool().await {
         Ok(pool) => pool,
         Err(e) => {
             eprintln!("Failed to connect to database: {:?}", e);

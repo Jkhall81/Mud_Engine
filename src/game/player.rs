@@ -1,14 +1,17 @@
-use sqlx::{PgPool, FromRow};
+use sqlx::{PgPool};
 use crate::game::equipment::{Equipment, EquipmentSlot};
 use std::collections::HashMap;
 
-#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(Debug, Clone, serde::Serialize, serde::Deserialize, sqlx::FromRow)]
 pub struct Player {
     pub name: String,
     pub race: String,
     pub class: String,
     pub location: String,
+
+    #[sqlx(skip)]
     pub inventory: Vec<Equipment>,
+    #[sqlx(skip)]
     pub equipped: HashMap<EquipmentSlot, Equipment>,
 
     // Core stats
@@ -31,21 +34,25 @@ pub struct Player {
 
 impl Player {
     pub async fn load_from_db(pool: &PgPool, name: &str) -> Result<Option<Self>, sqlx::Error> {
-        let player = sqlx::query_as!(
-            Player,
-            r#"
-            SELECT
-                name, race, class, location,
-                hp, mana, strength, dexterity, constitution,
-                intelligence, wisdom, level, experience,
-                max_hp, max_mana, gold, attacks_per_round
-            FROM players
-            WHERE name = $1
-            "#,
-            name
-        )
-        .fetch_optional(pool)
-        .await?;
+        let player = sqlx::query_as::<_, Player>(
+    r#"
+    SELECT
+        name, race, class, location,
+        hp, mana, strength, dexterity, constitution,
+        intelligence, wisdom, level, experience,
+        max_hp, max_mana, gold, attacks_per_round
+    FROM players
+    WHERE name = $1
+    "#
+)
+.bind(name)
+.fetch_optional(pool)
+.await?
+.map(|mut player| {
+    player.inventory = vec![];
+    player.equipped = HashMap::new();
+    player
+});
 
         // You will still need to load inventory + equipped later if you support it
         Ok(player)

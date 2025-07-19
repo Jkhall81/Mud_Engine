@@ -1,5 +1,6 @@
 use crate::game::player::Player;
 use crate::world::{room::Room, world_loader::World};
+use sqlx::PgPool;
 
 pub struct GameContext {
     pub player: Player,
@@ -7,9 +8,10 @@ pub struct GameContext {
 }
 
 impl GameContext {
-    pub fn with_player(player: Player) -> Self {
-        let world = World::load_from_file("assets/rooms.json")
-            .expect("Failed to load world");
+    pub async fn with_player(player: Player, pool: &PgPool) -> Self {
+        let world = World::load_from_db(pool)
+            .await
+            .expect("Failed to load world from DB");
 
         Self { player, world }
     }

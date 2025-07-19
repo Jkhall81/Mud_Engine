@@ -14,9 +14,10 @@ impl Command for MovementCommand {
         };
 
         match current_room.exits.get(dir) {
-            Some(next_id) => {
-                if ctx.world.rooms.contains_key(next_id) {
-                    ctx.player.location = next_id.clone();
+            Some(exit) => {
+                let next_room_id = &exit.to;
+                if ctx.world.rooms.contains_key(next_room_id) {
+                    ctx.player.location = next_room_id.clone();
                     ctx.current_room()
                         .map(|r| r.description.clone())
                         .unwrap_or_else(|| "You move, but end up nowhere.".into())

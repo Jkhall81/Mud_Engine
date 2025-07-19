@@ -1,0 +1,24 @@
+{
+  "id": "3003",
+  "title": "East Temple Room",
+  "description": "This is the eastern part of the great Temple of Midgaard. The polished marble glows softly in the light of magical sconces. Incense lingers in the air.",
+  "zone": 30,
+  "flags": ["indoors"],
+  "sector": "inside",
+  "exits": {
+    "west": {
+      "to": "3001",
+      "description": "A polished archway leads back west into the central hall.",
+      "is_door": false,
+      "is_locked": false
+    },
+    "east": {
+      "to": "3004",
+      "description": "A narrow hallway stretches further east, disappearing into shadow.",
+      "is_door": false,
+      "is_locked": false
+    }
+  },
+  "extra_descriptions": [],
+  "triggers": []
+}

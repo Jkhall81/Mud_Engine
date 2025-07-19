@@ -1,0 +1,35 @@
+{
+  "id": "3001",
+  "title": "Temple of Midgaard",
+  "description": "You are in the Temple of Midgaard. The walls are made of polished marble, and the floor is covered with a red carpet. There is a donation box here.",
+  "zone": 30,
+  "flags": ["indoors", "safe"],
+  "sector": "inside",
+  "exits": {
+    "north": {
+      "to": "3008",
+      "description": "A hallway leading north toward the temple altar.",
+      "is_door": false,
+      "is_locked": false
+    },
+    "east": {
+      "to": "3003",
+      "description": "A corridor extending toward the eastern section of the temple.",
+      "is_door": false,
+      "is_locked": false
+    },
+    "south": {
+      "to": "3021",
+      "description": "A wide stairway descends to the temple entrance.",
+      "is_door": false,
+      "is_locked": false
+    }
+  },
+  "extra_descriptions": [
+    {
+      "keyword": "donation box",
+      "description": "A sturdy wooden box marked with runes for charitable offerings."
+    }
+  ],
+  "triggers": []
+}
