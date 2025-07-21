@@ -1,26 +1,32 @@
 {
   "id": "3001",
   "title": "Temple of Midgaard",
-  "description": "You are in the Temple of Midgaard. The walls are made of polished marble, and the floor is covered with a red carpet. There is a donation box here.",
+  "description": "You stand in the grand Temple of Midgaard, a vast chamber bathed in the gentle glow of enchanted sconces affixed to towering marble columns. The air is thick with the scent of incense, a mix of sandalwood and myrrh that lingers long after it's burned. Red velvet carpets stretch across the polished stone floor, muffling your footsteps and guiding pilgrims toward a distant altar. Murals depicting ancient gods and forgotten battles cover the arched ceiling, their colors still vibrant despite the ages. A sense of peace and solemnity pervades the space, sheltering all who enter within its hallowed walls. Near the entrance stands a sturdy wooden donation box, carved with celestial runes, inviting offerings from the faithful.",
   "zone": 30,
   "flags": ["indoors", "safe"],
   "sector": "inside",
   "exits": {
     "north": {
-      "to": "3008",
-      "description": "A hallway leading north toward the temple altar.",
+      "to": "3005",
+      "description": "An arched marble passage leads deeper into the sacred Inner Temple.",
+      "is_door": false,
+      "is_locked": false
+    },
+    "south": {
+      "to": "3006",
+      "description": "Wide sandstone steps descend into the bustling Midgaard Market Square.",
       "is_door": false,
       "is_locked": false
     },
     "east": {
       "to": "3003",
-      "description": "A corridor extending toward the eastern section of the temple.",
+      "description": "A tiled hallway stretches east toward the official Midgaard Post Office.",
       "is_door": false,
       "is_locked": false
     },
-    "south": {
-      "to": "3021",
-      "description": "A wide stairway descends to the temple entrance.",
+    "west": {
+      "to": "3002",
+      "description": "A quiet stone corridor leads to the sanctum of the Cleric’s Guild.",
       "is_door": false,
       "is_locked": false
     }
@@ -28,7 +34,7 @@
   "extra_descriptions": [
     {
       "keyword": "donation box",
-      "description": "A sturdy wooden box marked with runes for charitable offerings."
+      "description": "A sturdy wooden box marked with glowing runes of charity and protection. It’s worn smooth from years of use, yet still radiates a faint divine warmth."
     }
   ],
   "triggers": []

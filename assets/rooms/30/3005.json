@@ -1,0 +1,39 @@
+{
+  "id": "3005",
+  "title": "Chamber of the Divine",
+  "description": "This sacred chamber radiates a sense of deep peace and timeless reverence. Tall, vaulted ceilings arch high above, their smooth marble surfaces etched with faint celestial patterns that seem to shimmer in the candlelight. The air here is unusually still, filled with a soothing warmth that seeps into the bones and calms the mind. A soft humming resonance echoes faintly—almost imperceptible—like the breath of the gods themselves. Padded kneeling cushions are arranged in quiet alcoves, and at the far end stands a small golden pedestal where offerings of incense smolder gently. It feels as though one's very spirit is gently restored with every passing moment.",
+  "zone": 30,
+  "flags": ["indoors", "high-regen"],
+  "sector": "inside",
+  "exits": {
+    "south": {
+      "to": "3001",
+      "description": "A smooth archway leads back south into the main temple chamber.",
+      "is_door": false,
+      "is_locked": false
+    },
+    "north": {
+      "to": "3007",
+      "description": "A quiet passage leads north toward a secluded donation room.",
+      "is_door": false,
+      "is_locked": false
+    },
+    "west": {
+      "to": "3008",
+      "description": "An arched doorway opens west into a narrow room filled with parchment and wooden boards.",
+      "is_door": false,
+      "is_locked": false
+    }
+  },
+  "extra_descriptions": [
+    {
+      "keyword": "pedestal",
+      "description": "The small golden pedestal bears the faint engraving of a divine symbol. Wisps of incense curl up from its surface."
+    },
+    {
+      "keyword": "patterns",
+      "description": "The celestial patterns seem to depict stars, moons, and mysterious sigils lost to time."
+    }
+  ],
+  "triggers": []
+}

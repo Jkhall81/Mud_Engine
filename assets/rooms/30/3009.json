@@ -1,0 +1,31 @@
+{
+  "id": "3009",
+  "title": "Chamber of Benediction",
+  "description": "This sacred chamber radiates a calm and radiant warmth, its marble floor inlaid with golden sigils and concentric circles of divine scripture. At the far end stands a raised dais upon which the cleric guildmaster delivers sermons and oversees training. Incense smoke curls upward toward a high vaulted ceiling, where stained glass panels filter soft multicolored light into divine patterns across the room. Padded prayer mats and ritual implements are neatly arranged, and the air carries a subtle hum of divine energy. This is where initiates are tested, healed, and guided into deeper mysteries of their calling.",
+  "zone": 30,
+  "flags": ["indoors", "guild", "cleric", "high-regen"],
+  "sector": "inside",
+  "exits": {
+    "east": {
+      "to": "3002",
+      "description": "An arched passageway leads back east into the main hall of the Cleric's Guild.",
+      "is_door": false,
+      "is_locked": false
+    }
+  },
+  "extra_descriptions": [
+    {
+      "keyword": "dais",
+      "description": "The elevated platform is adorned with silver symbols of healing and judgment, polished smooth by years of sermons and blessings."
+    },
+    {
+      "keyword": "sigils",
+      "description": "Golden sigils encircle the floor, forming divine wards and blessings against evil."
+    },
+    {
+      "keyword": "stained glass",
+      "description": "Each pane portrays a different divine figure bestowing light upon kneeling followers."
+    }
+  ],
+  "triggers": []
+}

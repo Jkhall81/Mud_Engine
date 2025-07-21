@@ -1,0 +1,29 @@
+{
+  "id": "3004",
+  "title": "Temple Altar",
+  "description": "You are at the altar of the Temple of Midgaard. A large marble altar is here, covered in candles and incense. A priest watches silently as you approach.",
+  "zone": 30,
+  "flags": ["indoors", "safe"],
+  "sector": "inside",
+  "exits": {
+    "south": {
+      "to": "3001",
+      "description": "A hallway leads south, back into the main temple chamber.",
+      "is_door": false,
+      "is_locked": false
+    },
+    "north": {
+      "to": "3005",
+      "description": "A narrow passage leads north into the priest's chambers.",
+      "is_door": true,
+      "is_locked": true
+    }
+  },
+  "extra_descriptions": [
+    {
+      "keyword": "altar",
+      "description": "The marble altar is covered in candles, incense, and sacred symbols."
+    }
+  ],
+  "triggers": []
+}

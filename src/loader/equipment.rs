@@ -1,7 +1,6 @@
-use crate::game::equipment::{Equipment, EquipmentSlot};
+use crate::game::equipment::{Equipment};
 use sqlx::PgPool;
 use std::fs;
-use std::path::Path;
 
 pub async fn load_equipment_from_dir(pool: &PgPool, dir: &str) -> Result<(), Box<dyn std::error::Error>> {
     for entry in fs::read_dir(dir)? {

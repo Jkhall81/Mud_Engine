@@ -1,0 +1,27 @@
+{
+  "id": "3007",
+  "title": "Sanctum of Offerings",
+  "description": "Soft golden light spills across the polished marble floor of this tranquil chamber, illuminating intricate mosaics of celestial beings embedded in the walls. At the center rests a large, rune-engraved donation altar carved from pure alabaster, its surface gently worn by the passage of time and generosity. The air is thick with the scent of incense and aged parchment, and a hush of reverence seems to settle over all who enter. Subtle magical auras dance faintly in the corners of the room, as though unseen forces watch over the gifts placed here. A sense of peace and renewal pervades the space, inviting quiet reflection and selfless offering.",
+  "zone": 30,
+  "flags": ["indoors", "safe", "no_mob"],
+  "sector": "inside",
+  "exits": {
+    "south": {
+      "to": "3005",
+      "description": "A quiet corridor leads back south into the Chamber of the Divine.",
+      "is_door": false,
+      "is_locked": false
+    }
+  },
+  "extra_descriptions": [
+    {
+      "keyword": "altar",
+      "description": "The alabaster donation altar is engraved with ancient runes and faintly glows with divine energy. Offerings can be placed here."
+    },
+    {
+      "keyword": "mosaics",
+      "description": "The walls are adorned with vibrant mosaics depicting gods, spirits, and heroic figures, all rendered in colored stone and glass."
+    }
+  ],
+  "triggers": []
+}

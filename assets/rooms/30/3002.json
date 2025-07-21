@@ -1,0 +1,37 @@
+{
+  "id": "3002",
+  "title": "Cleric's Hall",
+  "description": "Soft candlelight flickers along the sandstone walls of this serene chamber, casting long shadows over rows of wooden pews and tapestries bearing the emblems of benevolent deities. The air is filled with the faint aroma of incense and herbs, mingled with the quiet murmur of distant chanting that seems to echo from unseen alcoves. A sense of order and purpose pervades the space, as novice clerics and acolytes move through their routines in silent reverence. Shelves filled with scrolls and vials line the walls, hinting at the healing knowledge studied within. A modest archway to the west leads deeper into the guild’s inner sanctum.",
+  "zone": 30,
+  "flags": ["indoors", "guild", "cleric"],
+  "sector": "inside",
+  "exits": {
+    "west": {
+      "to": "3009",
+      "description": "An archway leads west into the inner chamber where the guildmaster resides.",
+      "is_door": false,
+      "is_locked": false
+    },
+    "east": {
+      "to": "3001",
+      "description": "A short hall leads east back to the central Temple of Midgaard.",
+      "is_door": false,
+      "is_locked": false
+    }
+  },
+  "extra_descriptions": [
+    {
+      "keyword": "pews",
+      "description": "Sturdy wooden pews arranged in rows, worn smooth by countless hours of devotion."
+    },
+    {
+      "keyword": "tapestries",
+      "description": "Colorful tapestries depict scenes of healing, sacrifice, and divine intervention."
+    },
+    {
+      "keyword": "scrolls",
+      "description": "Ancient scrolls detailing rites, prayers, and medicinal lore fill a shelf to the north."
+    }
+  ],
+  "triggers": []
+}

@@ -1,0 +1,27 @@
+{
+  "id": "3008",
+  "title": "Hall of Messages",
+  "description": "Dusty stone walls enclose this narrow hall, lined with aged wooden boards etched with countless messages from adventurers past and present. Some are simple requests for supplies or allies, while others recount heroic deeds or mysterious warnings. Tacked-up parchment rustles faintly in the draft, and bits of chalk and quills lie scattered on a nearby table. A faint smell of ink and wax permeates the air, and soft candlelight flickers across the graffiti-scribbled surface of the main postboard. Though quiet, the room feels alive with the presence of those who came before, their words preserved like whispers on the wall.",
+  "zone": 30,
+  "flags": ["indoors"],
+  "sector": "inside",
+  "exits": {
+    "east": {
+      "to": "3005",
+      "description": "A narrow hallway leads back east into the Chamber of the Divine.",
+      "is_door": false,
+      "is_locked": false
+    }
+  },
+  "extra_descriptions": [
+    {
+      "keyword": "postboard",
+      "description": "The large wooden postboard is covered with old and new notes. Some are neatly written, others scribbled in haste. Most are pinned with rusted nails or bits of twine."
+    },
+    {
+      "keyword": "parchment",
+      "description": "Bits of parchment bearing faded ink notes flutter slightly as you pass, each carrying a story or message."
+    }
+  ],
+  "triggers": []
+}

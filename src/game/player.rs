@@ -30,6 +30,7 @@ pub struct Player {
     pub max_mana: i32,
     pub gold: i32,
     pub attacks_per_round: i16,
+    pub password_hash: String,
 }
 
 impl Player {
@@ -40,7 +41,8 @@ impl Player {
         name, race, class, location,
         hp, mana, strength, dexterity, constitution,
         intelligence, wisdom, level, experience,
-        max_hp, max_mana, gold, attacks_per_round
+        max_hp, max_mana, gold, attacks_per_round,
+        password_hash
     FROM players
     WHERE name = $1
     "#
@@ -65,9 +67,10 @@ impl Player {
                 name, race, class, location,
                 hp, mana, strength, dexterity, constitution,
                 intelligence, wisdom, level, experience,
-                max_hp, max_mana, gold, attacks_per_round
+                max_hp, max_mana, gold, attacks_per_round,
+                password_hash
             )
-            VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17)
+            VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18)
             ON CONFLICT (name) DO UPDATE SET
                 race = EXCLUDED.race,
                 class = EXCLUDED.class,
@@ -84,7 +87,8 @@ impl Player {
                 max_hp = EXCLUDED.max_hp,
                 max_mana = EXCLUDED.max_mana,
                 gold = EXCLUDED.gold,
-                attacks_per_round = EXCLUDED.attacks_per_round
+                attacks_per_round = EXCLUDED.attacks_per_round,
+                password_hash = EXCLUDED.password_hash
             "#,
             self.name,
             self.race,
@@ -103,6 +107,7 @@ impl Player {
             self.max_mana,
             self.gold as i32,
             self.attacks_per_round as i32,
+            self.password_hash,
         )
         .execute(pool)
         .await?;

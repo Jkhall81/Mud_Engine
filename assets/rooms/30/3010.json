@@ -1,0 +1,31 @@
+{
+  "id": "3010",
+  "title": "Golden Flask Tavern",
+  "description": "Warm, flickering lanternlight dances across the rough-hewn wooden beams of the Golden Flask Tavern. The scent of roasted meat, spilled ale, and old smoke creates an atmosphere that is equal parts inviting and chaotic. Adventurers from all walks of life crowd the tables, laughing boisterously or huddled in hushed conversation. A long, battered bar runs along the far wall, manned by a stout barkeep polishing tankards with surprising diligence. In the corner, a bard tunes his lute beside a crackling hearth, and the air hums with the promise of stories, brawls, and the start of new quests. This is a place of refuge, camaraderie, and dangerous deals struck over mugs of frothing mead.",
+  "zone": 30,
+  "flags": ["indoors"],
+  "sector": "inside",
+  "exits": {
+    "west": {
+      "to": "3003",
+      "description": "A saloon-style doorway swings gently as it leads back to the Midgaard Post Office.",
+      "is_door": false,
+      "is_locked": false
+    }
+  },
+  "extra_descriptions": [
+    {
+      "keyword": "bar",
+      "description": "The bar is scratched and stained but sturdy, bearing the weight of countless tankards and elbows."
+    },
+    {
+      "keyword": "bard",
+      "description": "A weathered bard in a faded cloak plucks a somber tune from a lute that has seen better days."
+    },
+    {
+      "keyword": "hearth",
+      "description": "The stone hearth glows with a warm orange light, its flames adding to the tavern’s welcoming glow."
+    }
+  ],
+  "triggers": []
+}

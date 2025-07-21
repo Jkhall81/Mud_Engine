@@ -1,0 +1,45 @@
+{
+  "id": "3006",
+  "title": "Market Square",
+  "description": "You stand in the heart of Midgaard's bustling Market Square, though at this early hour it's serene and nearly empty. A grand fountain stands at the center, its clear waters bubbling peacefully and catching the morning light in shimmering arcs. The square is paved in worn flagstones that have borne generations of travelers, merchants, and townsfolk. Wooden benches line the edges beneath iron streetlamps, and flowering planters add vibrant life to the stonework. From here, well-worn paths lead in all directions to the city’s major districts. The space feels open and alive, a place where commerce, conversation, and the rhythm of city life converge.",
+  "zone": 30,
+  "flags": ["outdoors", "safe"],
+  "sector": "city",
+  "exits": {
+    "north": {
+      "to": "3001",
+      "description": "A broad stone path leads south toward the steps of the Temple of Midgaard.",
+      "is_door": false,
+      "is_locked": false
+    },
+    "south": {
+      "to": "3013",
+      "description": "A wide cobblestone path leads south toward the Common Square.",
+      "is_door": false,
+      "is_locked": false
+    },
+    "west": {
+      "to": "3012",
+      "description": "A cobbled road heads west down Sagewind Avenue, past shuttered merchant stalls.",
+      "is_door": false,
+      "is_locked": false
+    },
+    "east": {
+      "to": "3015",
+      "description": "To the east, the peaceful Silverglen Walk stretches between ivy-covered stone buildings.",
+      "is_door": false,
+      "is_locked": false
+    }
+  },
+  "extra_descriptions": [
+    {
+      "keyword": "fountain",
+      "description": "The fountain is carved of marble with statues of mythical beasts at each corner, spilling water into a round basin."
+    },
+    {
+      "keyword": "benches",
+      "description": "Sturdy wooden benches line the square, polished smooth by years of use."
+    }
+  ],
+  "triggers": []
+}

@@ -25,6 +25,7 @@ CREATE TABLE players (
     race TEXT NOT NULL,
     class TEXT NOT NULL,
     location TEXT NOT NULL,
+    password_hash TEXT NOT NULL,
 
     level INTEGER NOT NULL DEFAULT 1,
     experience INTEGER NOT NULL DEFAULT 0,
@@ -61,6 +62,7 @@ CREATE TABLE player_equipment (
 -- =======================
 CREATE TABLE rooms (
     id TEXT PRIMARY KEY, -- e.g. "start", "forest_edge"
+    title TEXT NOT NULL,
     description TEXT NOT NULL
 );
 

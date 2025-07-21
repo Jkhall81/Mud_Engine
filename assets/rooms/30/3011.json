@@ -1,0 +1,31 @@
+{
+  "id": "3011",
+  "title": "Grand Auction Hall",
+  "description": "You stand within the vaulted expanse of the Grand Auction Hall, where marble columns rise to meet a ceiling painted with faded murals of bygone riches and legendary trades. Wooden benches line the floor in orderly rows, facing a raised platform where items of great rarity and dubious origin are showcased beneath flickering chandeliers. The air is thick with anticipation and the murmur of quiet haggling. Banners of ancient guilds hang proudly from the walls, each symbol representing a legacy of commerce. A clerk behind a tall desk scribbles furiously in a ledger, while a pair of armored guards keep a watchful eye on the crowd. This is the heart of Midgaard's mercantile dealings—where fortunes rise and fall with every gavel strike.",
+  "zone": 30,
+  "flags": ["indoors"],
+  "sector": "inside",
+  "exits": {
+    "south": {
+      "to": "3003",
+      "description": "A polished stone stairway leads back down to the Midgaard Post Office.",
+      "is_door": false,
+      "is_locked": false
+    }
+  },
+  "extra_descriptions": [
+    {
+      "keyword": "platform",
+      "description": "The platform is made of dark oak and scuffed with the passage of countless treasures and hopeful sellers."
+    },
+    {
+      "keyword": "banners",
+      "description": "Ancient and vibrant, the banners display the emblems of Midgaard’s oldest merchant guilds."
+    },
+    {
+      "keyword": "clerk",
+      "description": "A tired-looking clerk with ink-stained fingers records every bid with mechanical precision."
+    }
+  ],
+  "triggers": []
+}

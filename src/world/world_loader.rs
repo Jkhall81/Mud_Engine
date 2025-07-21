@@ -11,7 +11,7 @@ impl World {
     pub async fn load_from_db(pool: &PgPool) -> Result<Self, sqlx::Error> {
         let rows = sqlx::query!(
             r#"
-            SELECT id, description
+            SELECT id, title, description
             FROM rooms
             "#
         )
@@ -25,6 +25,7 @@ impl World {
                 row.id.clone(),
                 Room {
                     id: row.id,
+                    title: row.title.unwrap_or_default(),
                     description: row.description,
                     ..Default::default() // Requires Room to implement Default
                 },

@@ -1,24 +1,43 @@
 {
   "id": "3003",
-  "title": "East Temple Room",
-  "description": "This is the eastern part of the great Temple of Midgaard. The polished marble glows softly in the light of magical sconces. Incense lingers in the air.",
+  "title": "Midgaard Post Office",
+  "description": "The post office is a bustling, well-organized space filled with wooden cubbies, sealed scroll tubes, and small pigeonholes for parcels. A polished oak counter stretches across the back wall where a meticulous clerk sorts letters with remarkable speed. A large board displays names of adventurers with awaiting mail, and a secure drop chute hums faintly with magical energy to send messages across the realms. The scent of wax, parchment, and a hint of pipe smoke hangs in the air. Occasional chatter and the flutter of courier birds echo through the high rafters, giving the room an energetic, utilitarian charm. This is where news, letters, and payments are exchanged, bridging far-off lives with handwritten words.",
   "zone": 30,
   "flags": ["indoors"],
   "sector": "inside",
   "exits": {
-    "west": {
-      "to": "3001",
-      "description": "A polished archway leads back west into the central hall.",
+    "east": {
+      "to": "3010",
+      "description": "A swinging wooden door leads east into a lively tavern.",
       "is_door": false,
       "is_locked": false
     },
-    "east": {
-      "to": "3004",
-      "description": "A narrow hallway stretches further east, disappearing into shadow.",
+    "north": {
+      "to": "3011",
+      "description": "A wide stone arch leads north into the bustling Midgaard Auction House.",
+      "is_door": false,
+      "is_locked": false
+    },
+    "west": {
+      "to": "3001",
+      "description": "A quiet hallway leads back west to the heart of the Temple of Midgaard.",
       "is_door": false,
       "is_locked": false
     }
   },
-  "extra_descriptions": [],
+  "extra_descriptions": [
+    {
+      "keyword": "counter",
+      "description": "The oak counter is deeply grooved with decades of use, yet still gleams with polish and care."
+    },
+    {
+      "keyword": "drop chute",
+      "description": "A magical tube used for sending letters instantly to distant lands. It's faintly warm to the touch."
+    },
+    {
+      "keyword": "mail board",
+      "description": "Names of players with pending messages are scratched into a slate board with chalk."
+    }
+  ],
   "triggers": []
 }
