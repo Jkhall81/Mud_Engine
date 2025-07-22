@@ -21,11 +21,14 @@ pub async fn load_rooms_from_dir(pool: &PgPool, dir: &str) -> Result<(), Box<dyn
     for room in &room_list {
         sqlx::query!(
             r#"
-            INSERT INTO rooms (id, description)
-            VALUES ($1, $2)
-            ON CONFLICT (id) DO UPDATE SET description = EXCLUDED.description
+            INSERT INTO rooms (id, title, description)
+            VALUES ($1, $2, $3)
+            ON CONFLICT (id) DO UPDATE SET
+                title = EXCLUDED.title,
+                description = EXCLUDED.description
             "#,
             room.id,
+            room.title,
             room.description
         )
         .execute(pool)

@@ -13,7 +13,7 @@
       "is_locked": false
     },
     "north": {
-      "to": "3016",
+      "to": "3017",
       "description": "A sturdy stone passage leads north into the city’s gatehouse.",
       "is_door": true,
       "is_locked": false

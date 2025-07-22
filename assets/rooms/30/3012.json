@@ -13,7 +13,7 @@
       "is_locked": false
     },
     "west": {
-      "to": "3017",
+      "to": "3013",
       "description": "The cobblestones continue west along Sagewind Avenue, flanked by old bookshops and empty merchant stalls.",
       "is_door": false,
       "is_locked": false
