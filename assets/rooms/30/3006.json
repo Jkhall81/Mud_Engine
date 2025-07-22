@@ -13,7 +13,7 @@
       "is_locked": false
     },
     "south": {
-      "to": "3013",
+      "to": "3018",
       "description": "A wide cobblestone path leads south toward the Common Square.",
       "is_door": false,
       "is_locked": false
@@ -25,7 +25,7 @@
       "is_locked": false
     },
     "east": {
-      "to": "3015",
+      "to": "3019",
       "description": "To the east, the peaceful Silverglen Walk stretches between ivy-covered stone buildings.",
       "is_door": false,
       "is_locked": false

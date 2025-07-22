@@ -1,0 +1,39 @@
+{
+  "id": "3013",
+  "title": "Sagewind Avenue - Midway",
+  "description": "This stretch of Sagewind Avenue narrows slightly as the buildings loom closer, their upper stories nearly touching across the street. The cobblestones are worn smooth by generations of boots and hooves. To the south, a wide archway bears a weathered emblem of crossed blades—the entrance to the Warrior’s Guild. The avenue continues east and west, framed by banners fluttering above shopfronts and training halls alike.",
+  "zone": 30,
+  "flags": ["outdoors"],
+  "sector": "city",
+  "exits": {
+    "east": {
+      "to": "3012",
+      "description": "Sagewind Avenue leads east toward the Market Square and merchant stalls.",
+      "is_door": false,
+      "is_locked": false
+    },
+    "west": {
+      "to": "3014",
+      "description": "The avenue continues west, where the buildings grow older and more tightly packed.",
+      "is_door": false,
+      "is_locked": false
+    },
+    "south": {
+      "to": "3015",
+      "description": "A broad archway carved with crossed blades marks the entrance to the Warrior’s Guild.",
+      "is_door": false,
+      "is_locked": false
+    }
+  },
+  "extra_descriptions": [
+    {
+      "keyword": "archway",
+      "description": "The stone archway to the south is engraved with the sigil of the Warrior’s Guild—two swords crossed over a roaring lion’s head."
+    },
+    {
+      "keyword": "banners",
+      "description": "Faded banners bearing guild colors and merchant crests hang from iron hooks along the buildings."
+    }
+  ],
+  "triggers": []
+}

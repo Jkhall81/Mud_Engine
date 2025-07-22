@@ -1,0 +1,27 @@
+{
+  "id": "3018",
+  "title": "Common Square",
+  "description": "This broad, open plaza serves as a gathering place for the townsfolk of Midgaard. Weathered stone benches curve around a central oak tree whose thick branches offer shade throughout the day. Children sometimes play here while elders share tales beneath the tree's sheltering limbs. Simple stalls are occasionally set up for local events or announcements. A path of smooth flagstones leads north toward the heart of the city.",
+  "zone": 30,
+  "flags": ["outdoors"],
+  "sector": "city",
+  "exits": {
+    "north": {
+      "to": "3006",
+      "description": "The flagstone path leads north to the Market Square, where the city's districts converge.",
+      "is_door": false,
+      "is_locked": false
+    }
+  },
+  "extra_descriptions": [
+    {
+      "keyword": "tree",
+      "description": "The old oak stands proud at the center of the square, its bark thick and roots deep—likely older than many buildings in the city."
+    },
+    {
+      "keyword": "benches",
+      "description": "Stone benches circle the tree, smooth from generations of townsfolk resting and conversing here."
+    }
+  ],
+  "triggers": []
+}

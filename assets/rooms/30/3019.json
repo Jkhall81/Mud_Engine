@@ -1,0 +1,27 @@
+{
+  "id": "3019",
+  "title": "Silverglen Walk - West End",
+  "description": "The soft hush of rustling ivy and distant birdsong gives this narrow stone lane a quiet charm. Flanked by old ivy-covered buildings and delicate wrought-iron balconies, Silverglen Walk feels more like a secluded garden path than a city street. Small flowerbeds sit beneath every window, and the stonework underfoot is smooth and pale. To the west, the path opens into the bustling Market Square.",
+  "zone": 30,
+  "flags": ["outdoors"],
+  "sector": "city",
+  "exits": {
+    "west": {
+      "to": "3006",
+      "description": "Silverglen Walk opens west into Market Square, where the peaceful lane meets the city’s busy heart.",
+      "is_door": false,
+      "is_locked": false
+    }
+  },
+  "extra_descriptions": [
+    {
+      "keyword": "ivy",
+      "description": "Thick green ivy climbs the walls of the buildings here, carefully trimmed to avoid windows and signage."
+    },
+    {
+      "keyword": "balconies",
+      "description": "Delicate wrought-iron balconies extend from the upper stories, each one adorned with potted flowers and wind chimes."
+    }
+  ],
+  "triggers": []
+}

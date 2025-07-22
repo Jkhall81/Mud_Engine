@@ -1,0 +1,39 @@
+{
+  "id": "3012",
+  "title": "Sagewind Avenue - East End",
+  "description": "You're standing at the eastern end of Sagewind Avenue, a cobbled thoroughfare that carries the scent of fresh bread and aged parchment. Though many merchant stalls here remain shuttered in the early light, signs of life stir behind ornate wooden façades. Ivy crawls up the walls of stone storefronts, and hanging lanterns sway gently in the breeze. The avenue stretches west, narrowing slightly between buildings that whisper stories of trade, history, and quiet ambition.",
+  "zone": 30,
+  "flags": ["outdoors"],
+  "sector": "city",
+  "exits": {
+    "east": {
+      "to": "3006",
+      "description": "The Market Square lies to the east, its fountain just visible beyond the stone path.",
+      "is_door": false,
+      "is_locked": false
+    },
+    "west": {
+      "to": "3017",
+      "description": "The cobblestones continue west along Sagewind Avenue, flanked by old bookshops and empty merchant stalls.",
+      "is_door": false,
+      "is_locked": false
+    },
+    "north": {
+      "to": "3016",
+      "description": "A solid oaken door with iron banding leads north into a shop bearing a sign that reads 'Durik’s Armor Emporium'.",
+      "is_door": true,
+      "is_locked": false
+    }
+  },
+  "extra_descriptions": [
+    {
+      "keyword": "lanterns",
+      "description": "Iron lanterns hang from arched brackets above the shops, each bearing the sigil of the city's merchants' guild."
+    },
+    {
+      "keyword": "storefronts",
+      "description": "Each storefront is unique—some timbered and cozy, others stone-faced and austere—bearing old names etched into wooden signs."
+    }
+  ],
+  "triggers": []
+}

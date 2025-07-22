@@ -1,0 +1,31 @@
+{
+  "id": "3015",
+  "title": "Hall of the Warrior’s Guild",
+  "description": "You stand within the stone-walled hall of the Warrior’s Guild. The room echoes faintly with the sounds of past battles—boots thudding on training mats, steel clashing against wooden dummies. Weapon racks line the walls, though most are currently empty, their contents taken by members off to train or fight. Banners in red and black hang from the vaulted ceiling, each stitched with the crest of the guild: crossed blades beneath a roaring lion. A reinforced oak door to the north leads back to the avenue.",
+  "zone": 30,
+  "flags": ["indoors", "safe"],
+  "sector": "inside",
+  "exits": {
+    "north": {
+      "to": "3013",
+      "description": "The reinforced oak door opens north onto Sagewind Avenue.",
+      "is_door": false,
+      "is_locked": false
+    }
+  },
+  "extra_descriptions": [
+    {
+      "keyword": "banners",
+      "description": "Large red and black banners hang from the beams, displaying the proud emblem of the Warrior’s Guild."
+    },
+    {
+      "keyword": "weapon racks",
+      "description": "Most of the racks are currently empty, though a few hold dulled training swords or notched axes used in sparring."
+    },
+    {
+      "keyword": "crest",
+      "description": "The guild’s crest—two swords crossed behind a lion’s head—is emblazoned everywhere, a mark of strength and tradition."
+    }
+  ],
+  "triggers": []
+}

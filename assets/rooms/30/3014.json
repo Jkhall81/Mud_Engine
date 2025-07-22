@@ -1,0 +1,33 @@
+{
+  "id": "3014",
+  "title": "Sagewind Avenue - Western End",
+  "description": "The avenue ends here where the city’s outer wall rises high above, its stone battlements casting long morning shadows across the cobbled street. A reinforced gatehouse stands to the north, its iron portcullis currently raised. Guards can occasionally be seen patrolling the wall above. To the east, Sagewind Avenue continues toward the heart of the city.",
+  "zone": 30,
+  "flags": ["outdoors"],
+  "sector": "city",
+  "exits": {
+    "east": {
+      "to": "3013",
+      "description": "The cobbled path of Sagewind Avenue continues east, back toward the Warrior’s Guild and Market Square.",
+      "is_door": false,
+      "is_locked": false
+    },
+    "north": {
+      "to": "3016",
+      "description": "A sturdy stone passage leads north into the city’s gatehouse.",
+      "is_door": true,
+      "is_locked": false
+    }
+  },
+  "extra_descriptions": [
+    {
+      "keyword": "gatehouse",
+      "description": "The gatehouse is built of thick granite blocks and reinforced with steel braces. A portcullis mechanism is mounted above the arched entrance."
+    },
+    {
+      "keyword": "battlements",
+      "description": "Stone battlements line the top of the city wall, where watchful guards pace with crossbows in hand."
+    }
+  ],
+  "triggers": []
+}

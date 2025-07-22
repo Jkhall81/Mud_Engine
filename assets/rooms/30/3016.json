@@ -1,0 +1,31 @@
+{
+  "id": "3016",
+  "title": "Durik's Armor Emporium",
+  "description": "The scent of oiled leather and polished steel hangs heavy in the air of Durik's Armor Emporium. Weapons are notably absent, as every wall and rack is dedicated solely to armor—gleaming breastplates, studded leathers, and chainmail sets line the room with practiced precision. A thick wool rug muffles footsteps, and a stout dwarven proprietor eyes the room from behind a heavy counter. Lanternlight glints off polished pauldrons and helms displayed on mannequins around the shop. A wooden door leads back out to the avenue to the south.",
+  "zone": 30,
+  "flags": ["indoors", "safe"],
+  "sector": "inside",
+  "exits": {
+    "south": {
+      "to": "3012",
+      "description": "A solid oaken door opens south back onto Sagewind Avenue.",
+      "is_door": true,
+      "is_locked": false
+    }
+  },
+  "extra_descriptions": [
+    {
+      "keyword": "armor",
+      "description": "Breastplates, chainmail, leather armor, and greaves are arranged with care, each tagged with tiny runes of craftsmanship."
+    },
+    {
+      "keyword": "counter",
+      "description": "The counter is worn from years of transactions, and behind it stands a dwarven shopkeeper with a thick beard and keener eyes."
+    },
+    {
+      "keyword": "mannequins",
+      "description": "Headless wooden mannequins display full armor sets, some ceremonial, others clearly built for war."
+    }
+  ],
+  "triggers": []
+}

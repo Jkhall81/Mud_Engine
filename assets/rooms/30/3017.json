@@ -1,0 +1,31 @@
+{
+  "id": "3017",
+  "title": "City Gatehouse",
+  "description": "Thick stone walls and a low arched ceiling define this utilitarian gatehouse chamber. Slots in the ceiling reveal the raised portcullis above, and racks of spare crossbows and quarrels line the walls. A pair of benches sit near a brazier where guards warm themselves between patrols. A narrow staircase spirals upward into the wall tower, though it's barred to civilians. The only exit is south, back to Sagewind Avenue.",
+  "zone": 30,
+  "flags": ["indoors"],
+  "sector": "inside",
+  "exits": {
+    "south": {
+      "to": "3014",
+      "description": "The stone corridor opens south to the end of Sagewind Avenue.",
+      "is_door": true,
+      "is_locked": false
+    }
+  },
+  "extra_descriptions": [
+    {
+      "keyword": "portcullis",
+      "description": "A heavy iron portcullis is set into the ceiling above the entrance, currently held aloft by thick chains and a pulley system."
+    },
+    {
+      "keyword": "brazier",
+      "description": "A cast-iron brazier glows faintly with coal embers, keeping the chamber warm for the gate guards."
+    },
+    {
+      "keyword": "staircase",
+      "description": "A narrow spiral staircase leads upward into the tower above, but a locked iron gate blocks further passage."
+    }
+  ],
+  "triggers": []
+}
